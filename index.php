@@ -58,7 +58,7 @@ if (isset($_SESSION['notification'])) {
 </head>
 <body>
     <header>
-        <h1>Witaj na stronie głównej!</h1>
+        <h1>Witaj na stronie głównej!!</h1>
         <p>Witaj, <?php echo htmlspecialchars($_SESSION['username']); ?>!</p>
     </header>
     <div class="container">
