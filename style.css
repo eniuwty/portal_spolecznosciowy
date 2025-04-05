@@ -1,0 +1,321 @@
+/* Resetowanie domyślnych stylów */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #fafafa; /* Jasne tło jak na Instagramie */
+    color: #262626;
+    line-height: 1.5;
+}
+
+/* Pasek nawigacyjny */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff; /* Białe tło jak w Instagramie */
+    border-bottom: 1px solid #dbdbdb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000;
+}
+
+.navbar a {
+    color: #262626;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 15px;
+}
+
+.navbar a:hover {
+    color: #0095f6; /* Niebieski akcent Instagrama */
+}
+
+.navbar-left h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-family: "Billabong", cursive; /* Czcionka podobna do logo Instagrama */
+    color: #262626;
+}
+
+.navbar-center p {
+    margin: 0;
+    font-size: 1rem;
+    color: #8e8e8e;
+}
+
+.navbar-right a {
+    color: #0095f6;
+    font-size: 1rem;
+    margin-right: 20px;
+}
+
+.navbar-right a:hover {
+    color: #00376b;
+}
+
+/* Kontener główny */
+.container {
+    max-width: 935px;
+    margin: 80px auto 20px; /* Dodatkowy margines na pasek nawigacyjny */
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+}
+
+/* Nagłówki */
+h1, h2 {
+    font-weight: 600;
+    color: #262626;
+    margin-bottom: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+header h1 {
+    font-size: 1.8rem;
+}
+
+header p {
+    color: #8e8e8e;
+    font-size: 1rem;
+}
+
+/* Formularz przesyłania zdjęć */
+form {
+    margin: 20px 0;
+    text-align: center;
+}
+
+input[type="file"] {
+    margin: 10px auto;
+    display: block;
+    font-size: 1rem;
+    color: #262626;
+}
+
+input[type="submit"] {
+    background-color: #0095f6;
+    color: #fff;
+    padding: 7px 16px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #00376b;
+}
+
+#preview {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Zdjęcia użytkownika */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(293px, 1fr)); /* Instagramowe proporcje */
+    gap: 28px; /* Odstępy między zdjęciami */
+    margin-top: 20px;
+}
+
+.gallery-item {
+    background: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 293px; /* Stała wysokość jak na Instagramie */
+    object-fit: cover; /* Przycinanie zdjęć do proporcji */
+    border-radius: 3px 3px 0 0;
+}
+
+.gallery-username {
+    font-weight: 600;
+    padding: 10px;
+    color: #262626;
+}
+
+.gallery-date {
+    font-size: 0.9rem;
+    color: #8e8e8e;
+    padding: 0 10px 10px;
+}
+
+/* Przycisk usuwania */
+button {
+    background-color: transparent;
+    color: #ed4956; /* Czerwony akcent Instagrama */
+    border: none;
+    padding: 8px 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+button:hover {
+    color: #c13541;
+}
+
+/* Galeria użytkowników */
+.gallery-container {
+    max-width: 935px;
+    margin: 80px auto 20px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+}
+
+/* Kontener logowania */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fafafa;
+}
+
+/* Box logowania */
+.login-box {
+    background: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    width: 350px;
+    padding: 40px 40px 20px;
+    text-align: center;
+}
+
+/* Logo */
+.login-logo {
+    font-family: "Billabong", cursive;
+    font-size: 2.5rem;
+    color: #262626;
+    margin-bottom: 30px;
+}
+
+/* Pola formularza */
+.login-box input[type="text"],
+.login-box input[type="password"] {
+    width: 100%;
+    padding: 9px 0 7px 8px;
+    margin: 5px 0;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    background: #fafafa;
+    font-size: 0.9rem;
+    color: #262626;
+}
+
+.login-box input[type="text"]::placeholder,
+.login-box input[type="password"]::placeholder {
+    color: #8e8e8e;
+}
+
+/* Przycisk logowania */
+.login-box input[type="submit"] {
+    width: 100%;
+    padding: 7px;
+    margin: 10px 0;
+    background-color: #0095f6;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-box input[type="submit"]:hover {
+    background-color: #00376b;
+}
+
+/* Komunikat o błędzie */
+.error-message {
+    color: #ed4956;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+/* Link do rejestracji */
+.signup-link {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #8e8e8e;
+}
+
+.signup-link a {
+    color: #0095f6;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* Powiadomienia */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4caf50; /* Zielony kolor dla sukcesu */
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.notification.hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+}
+
+.notification.error {
+    background-color: #f44336; /* Czerwony kolor dla błędu */
+}
+
+/* Responsywność */
+@media screen and (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+    }
+
+    .gallery-img {
+        height: 150px;
+    }
+
+    .navbar-left h2 {
+        font-size: 1.5rem;
+    }
+
+    .login-box {
+        width: 90%;
+        padding: 20px;
+    }
+}
