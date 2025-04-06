@@ -48,6 +48,8 @@ body {
 .navbar-center p {
     margin: 0;
     font-size: 1rem;
+    display: inline-flex;         /* Użyj inline-flex, żeby elementy były w jednym wierszu */
+    align-items: center;          /* Wyrównanie elementów w pionie */
     color: #8e8e8e;
 }
 
@@ -59,6 +61,16 @@ body {
 
 .navbar-right a:hover {
     color: #00376b;
+}
+.navbar-avatar {
+    width: 70px;             /* Rozmiar obrazka */
+    height: 70px;            /* Rozmiar obrazka */
+    border-radius: 50%;      /* Okrągły kształt */
+    object-fit: cover;       /* Wyrównanie obrazka */
+    margin-left: 10px;       /* Odstęp między nazwą a zdjęciem */
+    vertical-align: middle;  /* Wyrównanie obrazka w pionie względem tekstu */
+    display: inline-block;   /* Gwarantuje, że obrazek jest traktowany jako blok wewnątrz tekstu */
+
 }
 
 /* Kontener główny =============================================================================================================*/
@@ -318,4 +330,13 @@ button:hover {
         width: 90%;
         padding: 20px;
     }
+}
+
+/* avatar jako małe kółko */
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* robi z obrazka kółko */
+    object-fit: cover;  /* żeby obrazek się nie rozciągał */
+    border: 2px solid #ccc; /* opcjonalna ramka */
 }

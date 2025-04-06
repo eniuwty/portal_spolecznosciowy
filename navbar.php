@@ -4,7 +4,9 @@
     </div>
     <div class="navbar-center">
         <?php if (isset($_SESSION['username'])): ?>
-            <p>Jesteś zalogowany jako: <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong></p>
+            <p>Jesteś zalogowany jako: <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong>
+        <img src="<?php echo htmlspecialchars($_SESSION['avatar']); ?>" atl="Avatar"class="navbar-avatar" loading="lazy">
+        </p>
         <?php else: ?>
             <p>Nie jesteś zalogowany</p>
         <?php endif; ?>
