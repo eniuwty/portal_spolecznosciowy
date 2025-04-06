@@ -19,10 +19,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Hashuj hasło
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
         
+        //ścieżka do avatara
+
         // Dodaj nowego użytkownika do bazy danych
-        $stmt = $db->prepare('INSERT INTO users (username, password) VALUES (:username, :password)');
+        $stmt = $db->prepare('INSERT INTO users (username, password, file_path) VALUES (:username, :password, :file_path)');
         $stmt->bindValue(':username', $username, SQLITE3_TEXT);
         $stmt->bindValue(':password', $hashedPassword, SQLITE3_TEXT);
+        $stmt->bindValue(':file_path','uploads/avatars/default1.jpg',SQLITE3_TEXT);
         $stmt->execute();
 
         header('Location: login.php');
