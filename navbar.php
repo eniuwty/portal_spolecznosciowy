@@ -11,6 +11,7 @@
     </div>
     <div class="navbar-right">
         <a href="index.php">Strona główna</a>
+        <a href="profile.php">Profil</a>
         <a href="gallery.php">Galeria</a>
         <?php if (isset($_SESSION['username'])): ?>
             <a href="logout.php">Wyloguj</a>

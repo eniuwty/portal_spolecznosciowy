@@ -12,7 +12,7 @@ body {
     line-height: 1.5;
 }
 
-/* Pasek nawigacyjny */
+/* Pasek nawigacyjny ===================================================================================================*/
 .navbar {
     position: fixed;
     top: 0;
@@ -61,7 +61,7 @@ body {
     color: #00376b;
 }
 
-/* Kontener główny */
+/* Kontener główny =============================================================================================================*/
 .container {
     max-width: 935px;
     margin: 80px auto 20px; /* Dodatkowy margines na pasek nawigacyjny */
