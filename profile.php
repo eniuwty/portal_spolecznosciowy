@@ -8,12 +8,11 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-
-
 if (isset($_SESSION['upload_status'])) {
-    $uploadMessage = $_SESSION['upload_status'];
+    $loginError = $_SESSION['upload_status'];
     unset($_SESSION['upload_status']); // czyścimy po pokazaniu
 }
+
 
 // Połączenie z bazą danych
 $db = new SQLite3('db/database.sqlite');
@@ -62,13 +61,15 @@ $createdAt = $userData['created_at'];
     </head>
 <body>
     <form action="upload_avatar.php" method="POST" enctype="multipart/form-data">
-    <input type="file" id="fileInput" name="file" accept="image/*" style="display:none" onchange="showPreview(event)">
+    <input type="file" id="fileInput" name="file" accept="image/*" style="display:none" onchange="showPreview_avatar(event)">
 <div class="profile-container">
         <div class="profile-left">
-            <div class="avatar-wrapper" onclick="document.getElementById('fileInput').click()">
-                <img src="<?php echo htmlspecialchars($_SESSION['avatar']); ?>" alt="Avatar" class="avatar" id="current-avatar">
-            <img id="preview" src="" alt="Podgląd avatara">
-        <button type="submit" id="accept-button" disabled>Zaakceptuj</button>
+            <div class="profile-left-relative">
+                <div class="avatar-wrapper" onclick="document.getElementById('fileInput').click()">
+                    <img src="<?php echo htmlspecialchars($_SESSION['avatar']); ?>" alt="Avatar" class="avatar" id="current-avatar">
+                <img id="preview" src="" alt="Podgląd avatara">
+                </div>
+            <button type="submit" id="accept-button" disabled>Zaakceptuj</button>
         </div>
         </form>
         <div class="profile-center">

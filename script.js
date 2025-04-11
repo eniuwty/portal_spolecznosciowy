@@ -18,7 +18,8 @@ function showPreview(event) {
     }
 }
 
-  function showNotification(message, type = 'success') {
+//do obsługi powiadomień
+  function showNotification(message, type = 'success') { 
     const notification = document.getElementById('notification');
     notification.textContent = message;
 
@@ -34,7 +35,7 @@ function showPreview(event) {
     }, 3000);
 }
   
-function showPreview(event) {
+function showPreview_avatar(event) {
     const preview = document.getElementById('preview');
     const file = event.target.files[0];
     const acceptButton = document.getElementById('accept-button');

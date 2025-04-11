@@ -8,7 +8,7 @@ if (!isset($_SESSION['user_id'])) {
 
 $db = new SQLite3('db/database.sqlite');
 
-$loginError = null;
+$loginError = "nic";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
@@ -44,8 +44,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $stmt->bindValue(':user_id', $_SESSION['user_id'], SQLITE3_INTEGER);
                 $stmt->execute();
 
-               // $_SESSION['avatar'] = $user['file_path'];
-
                 $loginError = "Plik został przesłany i zaktualizowany pomyślnie.";
             } else {
                 $loginError = "Wystąpił błąd podczas przenoszenia pliku.";
@@ -57,20 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $loginError = "Wystąpił błąd podczas przesyłania pliku.";
     }
 }
-?>
-
-<!-- HTML + komunikaty -->
-<link rel="stylesheet" href="style.css">
-<div id="notification" class="notification hidden"></div>
-<script src="script.js"></script>
-
-<?php /* if (isset($loginError)): ?>
-<script>
-  showNotification("<?php echo htmlspecialchars($loginError); ?>", "<?php echo $loginError === 'Plik został przesłany i zaktualizowany pomyślnie.' ? 'success' : 'error'; ?>");
-</script>
-<?php endif; ?>
-<?php */
-$_SESSION["upload_status"] = $loginError;
+$_SESSION['upload_status'] = $loginError;
 header("Location: profile.php");
 exit();
 ?>
