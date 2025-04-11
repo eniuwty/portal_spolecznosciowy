@@ -8,6 +8,13 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
+
+
+if (isset($_SESSION['upload_status'])) {
+    $uploadMessage = $_SESSION['upload_status'];
+    unset($_SESSION['upload_status']); // czyścimy po pokazaniu
+}
+
 // Połączenie z bazą danych
 $db = new SQLite3('db/database.sqlite');
 
@@ -92,34 +99,17 @@ $createdAt = $userData['created_at'];
         </div>
     </div>
 
-    <script>
-function showPreview(event) {
-    const preview = document.getElementById('preview');
-    const file = event.target.files[0];
-    const acceptButton = document.getElementById('accept-button');
+<!-- Kontener na powiadomienie -->
+<div id="notification" class="notification hidden"></div>
 
-    if (file) {
-        const reader = new FileReader();
-
-        reader.onload = function(e) {
-            preview.src = e.target.result;
-            preview.style.display = 'block';
-
-            // Aktywuj przycisk
-            acceptButton.classList.add('active');
-            acceptButton.disabled = false;
-        };
-
-        reader.readAsDataURL(file);
-    } else {
-        preview.src = '';
-        preview.style.display = 'none';
-
-        // Dezaktywuj przycisk
-        acceptButton.classList.remove('active');
-        acceptButton.disabled = true;
-    }
-}
+<script src="script.js"></script>
+<?php if (isset($loginError)): ?>
+<script>
+    showNotification("<?php echo htmlspecialchars($loginError); ?>", "error");
 </script>
+<?php endif; ?>
 </body>
 </html>
+<?php
+$db->close();
+?>

@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $fileExtension = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
         $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif'];
 
-        if (in_array($fileExtension, $allowedExtensions)) {
+        if (in_array($fileExtension, $allowedExtensions)) { //sprawdzanie czy dobry plik
             $uploadDir = 'uploads/avatars/';
             if (!is_dir($uploadDir)) {
                 mkdir($uploadDir, 0755, true);
@@ -33,14 +33,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $result = $stmtOld->execute();
                 $oldFile = $result->fetchArray(SQLITE3_ASSOC)['file_path'];
 
-                if ($oldFile && file_exists($oldFile) &&!file_exists("default1.jpg")) {
+                if ($oldFile && file_exists($oldFile) &&basename($oldFile) !== "default1.jpg") {
                     unlink($oldFile); // usuwa plik z dysku
                 }
 
                 // Zapisz nową ścieżkę
                 $stmt = $db->prepare('UPDATE users SET file_path = :file_path WHERE id = :user_id');
                 $stmt->bindValue(':file_path', $destinationPath, SQLITE3_TEXT);
-                $_SESSION['avatar'] = ':file_path';
+                $_SESSION['avatar'] = $destinationPath;
                 $stmt->bindValue(':user_id', $_SESSION['user_id'], SQLITE3_INTEGER);
                 $stmt->execute();
 
@@ -64,12 +64,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div id="notification" class="notification hidden"></div>
 <script src="script.js"></script>
 
-<?php if (isset($loginError)): ?>
+<?php /* if (isset($loginError)): ?>
 <script>
   showNotification("<?php echo htmlspecialchars($loginError); ?>", "<?php echo $loginError === 'Plik został przesłany i zaktualizowany pomyślnie.' ? 'success' : 'error'; ?>");
 </script>
 <?php endif; ?>
-<?php
+<?php */
+$_SESSION["upload_status"] = $loginError;
 header("Location: profile.php");
 exit();
 ?>

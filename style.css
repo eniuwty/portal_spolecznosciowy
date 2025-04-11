@@ -66,6 +66,7 @@ body {
     width: 70px;             /* Rozmiar obrazka */
     height: 70px;            /* Rozmiar obrazka */
     border-radius: 50%;      /* Okrągły kształt */
+    border: 2px #c13541 ;
     object-fit: cover;       /* Wyrównanie obrazka */
     margin-left: 10px;       /* Odstęp między nazwą a zdjęciem */
     vertical-align: middle;  /* Wyrównanie obrazka w pionie względem tekstu */

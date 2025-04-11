@@ -232,6 +232,16 @@ if (isset($_POST['comment_photo_id']) && isset($_POST['comment_text'])) {
         ?>
     </div>
 
+    <!-- Kontener na powiadomienie -->
+    <div id="notification" class="notification hidden"></div>
+
+    <script src="script.js"></script>
+    <?php if (isset($loginError)): ?>
+    <script>
+        showNotification("<?php echo htmlspecialchars($loginError); ?>", "error");
+    </script>
+    <?php endif; ?>
+
 </body>
 </html>
 

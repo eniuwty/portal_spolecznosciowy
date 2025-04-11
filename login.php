@@ -37,9 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="login-container">
         <div class="login-box">
             <h1 class="login-logo">Instagram</h1>
-            <?php if (isset($loginError)): ?>
-                <p class="error-message"><?php echo htmlspecialchars($loginError); ?></p>
-            <?php endif; ?>
+
             <form method="POST">
                 <input type="text" name="username" placeholder="Nazwa użytkownika" required>
                 <input type="password" name="password" placeholder="Hasło" required>
@@ -52,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- Kontener na powiadomienie -->
     <div id="notification" class="notification hidden"></div>
 
-    <script src="script2.js"></script>
+    <script src="script.js"></script>
     <?php if (isset($loginError)): ?>
     <script>
         showNotification("<?php echo htmlspecialchars($loginError); ?>", "error");
