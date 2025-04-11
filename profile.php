@@ -60,6 +60,10 @@ $createdAt = $userData['created_at'];
         <link rel="stylesheet" href="style.css">
     </head>
 <body>
+    <div class="stripe">
+        <div class="page-container">
+
+
     <form action="upload_avatar.php" method="POST" enctype="multipart/form-data">
     <input type="file" id="fileInput" name="file" accept="image/*" style="display:none" onchange="showPreview_avatar(event)">
 <div class="profile-container">
@@ -98,6 +102,8 @@ $createdAt = $userData['created_at'];
                 <strong>Lajki:</strong> <?php echo $likesCount; ?>
             </div>
         </div>
+    </div>
+    </div>
     </div>
 
 <!-- Kontener na powiadomienie -->

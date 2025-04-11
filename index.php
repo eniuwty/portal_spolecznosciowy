@@ -165,6 +165,10 @@ if (isset($_POST['comment_photo_id']) && isset($_POST['comment_text'])) {
     </style>
 </head>
 <body>
+    <div class="stripe">
+        <div class="page-container">
+
+
     <header>
         <h1>Obserwowane zdjęcia</h1>
         <p>Witaj, <?php echo htmlspecialchars($_SESSION['username']); ?>!</p>
@@ -230,6 +234,8 @@ if (isset($_POST['comment_photo_id']) && isset($_POST['comment_text'])) {
             echo '</div>';
         }
         ?>
+    </div>
+    </div>
     </div>
 
     <!-- Kontener na powiadomienie -->

@@ -34,6 +34,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="stripe">
+ <div class="page-container">
+
+ 
+
+
+
     <div class="login-container">
         <div class="login-box">
             <h1 class="login-logo">Instagram</h1>
@@ -46,7 +53,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <p class="signup-link">Nie masz konta? <a href="register.php">Zarejestruj się</a></p>
         </div>
     </div>
-
+    </div>
+    </div>
     <!-- Kontener na powiadomienie -->
     <div id="notification" class="notification hidden"></div>
 

@@ -5,12 +5,8 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #fafafa; /* Jasne tło jak na Instagramie */
-    color: #262626;
-    line-height: 1.5;
-}
+
+
 
 /* Pasek nawigacyjny ===================================================================================================*/
 .navbar {
@@ -18,8 +14,8 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #fff; /* Białe tło jak w Instagramie */
-    border-bottom: 1px solid #dbdbdb;
+    background-color: #000000; /* Białe tło jak w Instagramie */
+    border-bottom: 1px solid #000000;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -441,3 +437,95 @@ button:hover {
     #accept-button.active:hover {
         background-color: #45a049;
     }
+
+    /* sprawdzam czy moge zimportowac ten fajny efekt tla. Jeżeli tak to przejdziemy na moty strony czarno-czerwony */
+
+    :root {
+        --stripe-size: 100px;
+        --color1: #c44;
+        --color2: #313131;
+        --duration: 2s;
+    }
+    
+    body {
+        margin: 0;
+        padding: 0;
+
+        min-height: 100%; /* Pozwala na przewijanie w pionie, gdy zawartość jest wyższa niż ekran */
+    }
+    
+    .stripe {
+        position: relative;
+        width: 100%;
+        min-height: 100%; /* Ustawienie minimalnej wysokości na 100% dla tła */
+        overflow: hidden;
+    }
+    
+    .stripe::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: calc(100% + var(--stripe-size));
+        height: 100%;
+        background: repeating-linear-gradient(
+            45deg,
+            var(--color2) 25%,
+            var(--color2) 50%,
+            var(--color1) 50%,
+            var(--color1) 75%
+        );
+        background-size: var(--stripe-size) var(--stripe-size);
+        animation: stripeTransform var(--duration) linear infinite;
+        z-index: 1;
+    }
+    
+    .stripe::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(ellipse at center, rgba(27, 39, 53, 0) 0%, #090a0f 100%);
+        z-index: 2;
+    }
+    
+    /* Animacja dla tła */
+    @keyframes stripeTransform {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(var(--stripe-size) * -1));
+        }
+    }
+    
+    /* Kontener strony */
+    .page-container {
+        position: absolute; /* Ustawiamy na absolutne, aby wyśrodkować */
+        top: 50%; /* Połowa wysokości ekranu */
+        left: 50%; /* Połowa szerokości ekranu */
+        transform: translate(-50%, -50%); /* Wyśrodkowanie dokładne */
+        z-index: 3; /* Kontener ma być nad tłem */
+        background-color: white;
+        padding: 20px;
+        max-width: 960px; /* Stała szerokość kontenera */
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Ustawienia responsywności */
+    @media (max-width: 1200px) {
+        .page-container {
+            max-width: 90%; /* Kontener ma maksymalnie 90% szerokości ekranu */
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .page-container {
+            max-width: 100%; /* Na mniejszych ekranach kontener ma pełną szerokość */
+            padding: 15px;
+        }
+    }
+    

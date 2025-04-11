@@ -85,6 +85,10 @@ $result = $db->query($query);
     </style>
 </head>
 <body>
+    <div class="stripe">
+        <div class="page-container">
+
+
     <div class="gallery-container">
         <h1>Galeria wszystkich zdjęć</h1>
         <div class="gallery-grid">
@@ -146,6 +150,8 @@ $result = $db->query($query);
                 </div>
             <?php endwhile; ?>
         </div>
+    </div>
+    </div>
     </div>
 
     <script>
