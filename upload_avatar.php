@@ -40,10 +40,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // Zapisz nową ścieżkę
                 $stmt = $db->prepare('UPDATE users SET file_path = :file_path WHERE id = :user_id');
                 $stmt->bindValue(':file_path', $destinationPath, SQLITE3_TEXT);
+                $_SESSION['avatar'] = ':file_path';
                 $stmt->bindValue(':user_id', $_SESSION['user_id'], SQLITE3_INTEGER);
                 $stmt->execute();
 
-              //  $_SESSION['avatar'] = $user['file_path'];
+               // $_SESSION['avatar'] = $user['file_path'];
 
                 $loginError = "Plik został przesłany i zaktualizowany pomyślnie.";
             } else {
@@ -61,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!-- HTML + komunikaty -->
 <link rel="stylesheet" href="style.css">
 <div id="notification" class="notification hidden"></div>
-<script src="script2.js"></script>
+<script src="script.js"></script>
 
 <?php if (isset($loginError)): ?>
 <script>

@@ -63,6 +63,7 @@ $createdAt = $userData['created_at'];
             <img id="preview" src="" alt="Podgląd avatara">
         <button type="submit" id="accept-button" disabled>Zaakceptuj</button>
         </div>
+        </form>
         <div class="profile-center">
             <!-- Nazwa użytkownika -->
              <h3>Dołączono od</h3>
@@ -90,7 +91,7 @@ $createdAt = $userData['created_at'];
             </div>
         </div>
     </div>
-</form>
+
     <script>
 function showPreview(event) {
     const preview = document.getElementById('preview');
