@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $result = $stmtOld->execute();
                 $oldFile = $result->fetchArray(SQLITE3_ASSOC)['file_path'];
 
-                if ($oldFile && file_exists($oldFile)) {
+                if ($oldFile && file_exists($oldFile) &&!file_exists("default1.jpg")) {
                     unlink($oldFile); // usuwa plik z dysku
                 }
 
