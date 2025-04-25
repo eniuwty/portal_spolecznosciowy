@@ -5,16 +5,13 @@
     box-sizing: border-box;
 }
 
-
-
-
 /* Pasek nawigacyjny ===================================================================================================*/
 .navbar {
     position: sticky;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #000000; /* Białe tło jak w Instagramie */
+    background-color: #000000;
     border-bottom: 1px solid #000000;
     display: flex;
     justify-content: space-between;
@@ -31,21 +28,21 @@
 }
 
 .navbar a:hover {
-    color: #0095f6; /* Niebieski akcent Instagrama */
+    color: #0095f6;
 }
 
 .navbar-left h2 {
     margin: 0;
     font-size: 1.8rem;
-    font-family: "Billabong", cursive; /* Czcionka podobna do logo Instagrama */
+    font-family: "Billabong", cursive;
     color: #262626;
 }
 
 .navbar-center p {
     margin: 0;
     font-size: 1rem;
-    display: inline-flex;         /* Użyj inline-flex, żeby elementy były w jednym wierszu */
-    align-items: center;          /* Wyrównanie elementów w pionie */
+    display: inline-flex;
+    align-items: center;
     color: #8e8e8e;
 }
 
@@ -58,29 +55,28 @@
 .navbar-right a:hover {
     color: #00376b;
 }
-.navbar-avatar {
-    width: 70px;             /* Rozmiar obrazka */
-    height: 70px;            /* Rozmiar obrazka */
-    border-radius: 50%;      /* Okrągły kształt */
-    border: 2px #c13541 ;
-    object-fit: cover;       /* Wyrównanie obrazka */
-    margin-left: 10px;       /* Odstęp między nazwą a zdjęciem */
-    vertical-align: middle;  /* Wyrównanie obrazka w pionie względem tekstu */
-    display: inline-block;   /* Gwarantuje, że obrazek jest traktowany jako blok wewnątrz tekstu */
 
+.navbar-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px #c13541;
+    object-fit: cover;
+    margin-left: 10px;
+    vertical-align: middle;
+    display: inline-block;
 }
 
 /* Kontener główny =============================================================================================================*/
 .container {
     max-width: 935px;
-    margin: 80px auto 20px; /* Dodatkowy margines na pasek nawigacyjny */
+    margin: 80px auto 20px;
     padding: 20px;
     background: #fff;
     border: 1px solid #dbdbdb;
     border-radius: 3px;
 }
 
-/* Nagłówki */
 h1, h2 {
     font-weight: 600;
     color: #262626;
@@ -139,8 +135,8 @@ input[type="submit"]:hover {
 /* Zdjęcia użytkownika */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(293px, 1fr)); /* Instagramowe proporcje */
-    gap: 28px; /* Odstępy między zdjęciami */
+    grid-template-columns: repeat(auto-fit, minmax(293px, 1fr));
+    gap: 28px;
     margin-top: 20px;
 }
 
@@ -153,8 +149,8 @@ input[type="submit"]:hover {
 
 .gallery-img {
     width: 100%;
-    height: 293px; /* Stała wysokość jak na Instagramie */
-    object-fit: cover; /* Przycinanie zdjęć do proporcji */
+    height: 293px;
+    object-fit: cover;
     border-radius: 3px 3px 0 0;
 }
 
@@ -173,7 +169,7 @@ input[type="submit"]:hover {
 /* Przycisk usuwania */
 button {
     background-color: transparent;
-    color: #ed4956; /* Czerwony akcent Instagrama */
+    color: #ed4956;
     border: none;
     padding: 8px 16px;
     font-weight: 600;
@@ -214,7 +210,6 @@ button:hover {
     text-align: center;
 }
 
-/* Logo */
 .login-logo {
     font-family: "Billabong", cursive;
     font-size: 2.5rem;
@@ -222,7 +217,6 @@ button:hover {
     margin-bottom: 30px;
 }
 
-/* Pola formularza */
 .login-box input[type="text"],
 .login-box input[type="password"] {
     width: 100%;
@@ -235,12 +229,10 @@ button:hover {
     color: #262626;
 }
 
-.login-box input[type="text"]::placeholder,
-.login-box input[type="password"]::placeholder {
+.login-box input::placeholder {
     color: #8e8e8e;
 }
 
-/* Przycisk logowania */
 .login-box input[type="submit"] {
     width: 100%;
     padding: 7px;
@@ -258,14 +250,12 @@ button:hover {
     background-color: #00376b;
 }
 
-/* Komunikat o błędzie */
 .error-message {
     color: #ed4956;
     font-size: 0.9rem;
     margin-bottom: 10px;
 }
 
-/* Link do rejestracji */
 .signup-link {
     margin-top: 20px;
     font-size: 0.9rem;
@@ -287,7 +277,7 @@ button:hover {
     position: fixed;
     top: 20px;
     right: 20px;
-    background-color: #4caf50; /* Zielony kolor dla sukcesu */
+    background-color: #4caf50;
     color: white;
     padding: 15px 20px;
     border-radius: 5px;
@@ -305,7 +295,7 @@ button:hover {
 }
 
 .notification.error {
-    background-color: #f44336; /* Czerwony kolor dla błędu */
+    background-color: #f44336;
 }
 
 /* Responsywność */
@@ -337,7 +327,6 @@ button:hover {
     padding: 20px;
 }
 
-/* Styl lewej sekcji (Avatar) */
 .profile-left {
     flex: 1;
     display: flex;
@@ -345,13 +334,12 @@ button:hover {
 }
 
 .avatar {
-    width: 150px;  /* Rozmiar avatara */
+    width: 150px;
     height: 150px;
-    border-radius: 50%;  /* Okrągły kształt */
-    object-fit: cover;   /* Dopasowanie obrazka do rozmiaru */
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-/* Styl środkowej sekcji (Nazwa użytkownika) */
 .profile-center {
     flex: 2;
     text-align: center;
@@ -362,7 +350,6 @@ button:hover {
     margin: 0;
 }
 
-/* Styl prawej sekcji (Statystyki) */
 .profile-right {
     flex: 1;
     display: flex;
@@ -370,7 +357,6 @@ button:hover {
     align-items: center;
 }
 
-/* Styl dla statystyk */
 .stat-item {
     margin: 10px 0;
     font-size: 1.1em;
@@ -399,10 +385,10 @@ button:hover {
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    margin: 0;               /* ✨ WAŻNE: usuwa przesunięcia */
-    padding: 0;              /* ✨ */
-    border: none;            /* na wypadek, gdyby przeglądarka dodała domyślną ramkę */
-    display: block;          /* ✨ żeby nie było line-heightu */
+    margin: 0;
+    padding: 0;
+    border: none;
+    display: block;
 }
 
 #preview {
@@ -410,122 +396,115 @@ button:hover {
     z-index: 2;
 }
 
-    #accept-button {
-        position: absolute;
-        bottom: -40px;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 6px 12px;
-        font-size: 14px;
-        border: none;
-        border-radius: 8px;
-        z-index: 3;
-        transition: background-color 0.3s ease;
-        border-radius: 8px;
-        cursor: not-allowed;
-        background-color: #ccc; /* szary */
-        color: #666;
-        transition: background-color 0.3s ease;
-    }
+#accept-button {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 8px;
+    z-index: 3;
+    transition: background-color 0.3s ease;
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
 
-    #accept-button.active {
-        background-color: #4CAF50; /* zielony */
-        color: white;
-        cursor: pointer;
-    }
-    
-    #accept-button.active:hover {
-        background-color: #45a049;
-    }
+#accept-button.active {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
 
-    /* sprawdzam czy moge zimportowac ten fajny efekt tla. Jeżeli tak to przejdziemy na moty strony czarno-czerwony */
+#accept-button.active:hover {
+    background-color: #45a049;
+}
 
-    :root {
-        --stripe-size: 100px;
-        --color1: #c44;
-        --color2: #313131;
-        --duration: 2s;
-    }
-    
-    body {
-        margin: 0;
-        padding: 0;
+/* Stripe tło z animacją */
+:root {
+    --stripe-size: 100px;
+    --color1: #c44;
+    --color2: #313131;
+    --duration: 2s;
+}
 
-        min-height: 100%; /* Pozwala na przewijanie w pionie, gdy zawartość jest wyższa niż ekran */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.stripe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.stripe::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% + var(--stripe-size));
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        var(--color2) 25%,
+        var(--color2) 50%,
+        var(--color1) 50%,
+        var(--color1) 75%
+    );
+    background-size: var(--stripe-size) var(--stripe-size);
+    animation: stripeTransform var(--duration) linear infinite;
+    z-index: 1;
+}
+
+.stripe::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, rgba(27, 39, 53, 0) 0%, #090a0f 100%);
+    z-index: 2;
+}
+
+@keyframes stripeTransform {
+    0% {
+        transform: translateX(0);
     }
-    
-    .stripe {
-        position: relative;
-        width: 100%;
-        min-height: 100%; /* Ustawienie minimalnej wysokości na 100% dla tła */
-        overflow: hidden;
+    100% {
+        transform: translateX(calc(var(--stripe-size) * -1));
     }
-    
-    .stripe::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: calc(100% + var(--stripe-size));
-        height: 100%;
-        background: repeating-linear-gradient(
-            45deg,
-            var(--color2) 25%,
-            var(--color2) 50%,
-            var(--color1) 50%,
-            var(--color1) 75%
-        );
-        background-size: var(--stripe-size) var(--stripe-size);
-        animation: stripeTransform var(--duration) linear infinite;
-        z-index: 1;
-    }
-    
-    .stripe::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(ellipse at center, rgba(27, 39, 53, 0) 0%, #090a0f 100%);
-        z-index: 2;
-    }
-    
-    /* Animacja dla tła */
-    @keyframes stripeTransform {
-        0% {
-            transform: translateX(0);
-        }
-        100% {
-            transform: translateX(calc(var(--stripe-size) * -1));
-        }
-    }
-    
-    /* Kontener strony */
+}
+
+/* Kontener strony */
+.page-container {
+    position: relative;
+    z-index: 3;
+    background-color: white;
+    padding: 20px;
+    max-width: 960px;
+    width: 100%;
+    margin: 40px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 1200px) {
     .page-container {
-        position: absolute; /* Ustawiamy na absolutne, aby wyśrodkować */
-        top: 50%; /* Połowa wysokości ekranu */
-        left: 50%; /* Połowa szerokości ekranu */
-        transform: translate(-50%, -50%); /* Wyśrodkowanie dokładne */
-        z-index: 3; /* Kontener ma być nad tłem */
-        background-color: white;
-        padding: 20px;
-        max-width: 960px; /* Stała szerokość kontenera */
-        width: 100%;
-        margin: 0 auto;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        max-width: 90%;
     }
-    
-    /* Ustawienia responsywności */
-    @media (max-width: 1200px) {
-        .page-container {
-            max-width: 90%; /* Kontener ma maksymalnie 90% szerokości ekranu */
-        }
+}
+
+@media (max-width: 768px) {
+    .page-container {
+        max-width: 100%;
+        padding: 15px;
     }
-    
-    @media (max-width: 768px) {
-        .page-container {
-            max-width: 100%; /* Na mniejszych ekranach kontener ma pełną szerokość */
-            padding: 15px;
-        }
-    }
-    
+}
